@@ -1,19 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emergency App</title>
-    <script>
-      navigator.geolocation.getCurrentPosition((position) => {
-        const p = position.coords;
-        alert("Latitude: " + p.latitude + " Longitude: " + p.longitude);
-        // console.log(p.latitude, p.longitude);
-      });
-    </script>
   </head>
 
   <body>
-    <button class="click-me">Click Here</button>
+    <script>
+      function getPos() {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const pos = position.coords;
+          alert(
+            "Your Latitude: " +
+              pos.latitude +
+              "\nYour Longitude: " +
+              pos.longitude
+          );
+          console.log(pos.latitude, pos.longitude);
+        });
+      }
+    </script>
+    <button class="click-me" onclick="getPos()">Click Here</button>
   </body>
 </html>
